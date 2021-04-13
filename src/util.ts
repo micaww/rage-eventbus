@@ -95,14 +95,6 @@ export function parseData(data: string): any {
     });
 }
 
-export function promiseResolve(result: any): Promise<any> {
-    return new Promise(resolve => setTimeout(() => resolve(result), 0));
-}
-
-export function promiseReject(error: any): Promise<any> {
-    return new Promise((_, reject) => setTimeout(() => reject(error), 0));
-}
-
 export function promiseTimeout(promise: Promise<any>, timeout?: number){
     if(typeof timeout === 'number'){
         return Promise.race([
